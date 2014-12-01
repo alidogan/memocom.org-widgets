@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Angular Gridster</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+    <script src="https://code.angularjs.org/1.2.15/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
+</head>
+
+<body ng-app="app">
+
+        <div class="container"ng-controller="DashboardCtrl">
+        
+        <div class="page-header">
+			<a class="pull-right btn btn-primary" ng-click="addWidget()"><i class="glyphicon glyphicon-plus"></i> Add Widget</a>
+			<a class="pull-right btn btn-warning" ng-click="clear()"><i class="glyphicon glyphicon-trash"></i> Clear</a>
+			<h1 style="display: inline-block; width: 200px;">
+		</select>
+
+</div>
+<div gridster="gridsterOptions">
+	<ul>
+		<li gridster-item="widget" ng-repeat="widget in dashboard.widgets">
+			<div class="box" ng-controller="CustomWidgetCtrl">
+				<div class="box-header">
+					{{ widget.name }} <div class="box-header-btns pull-right">
+						<a title="settings" ng-click="openSettings(widget)"><i class="glyphicon glyphicon-cog"></i></a>
+						<a title="Remove widget" ng-click="remove(widget)"><i class="glyphicon glyphicon-trash"></i></a>
+					</div>
+				</div>
+				<div class="box-content">
+                <!--Box content here-->
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+        
+        </div>
+  
+</body>
+
+</html>
